@@ -1,0 +1,27 @@
+main
+	Task_LED0
+		_OS_ReturnSave
+			_OS_SET_FSR_CUR_TASK
+	Task_LED1
+		_OS_ReturnSave
+			_OS_SET_FSR_CUR_TASK
+	Task_LED2
+		_OS_ReturnSave
+			_OS_SET_FSR_CUR_TASK
+	InitMCU
+	TickTimerIE
+	InitLCD
+		Lcd_Init
+			Delay_5500us
+			Delay_1us
+		Lcd_Cmd
+			Delay_1us
+			Delay_5500us
+			Delay_50us
+	OS_Init
+	_OS_Task_Create
+	_OS_JumpToTask
+		_OS_SET_FSR_CUR_TASK
+	_OS_SET_FSR_CUR_TASK
+INTERRUPT_HIGH
+	Mul_16X16_U
